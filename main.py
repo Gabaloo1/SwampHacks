@@ -83,7 +83,7 @@ class Caracter:
         self.velocidad = 8
         self.coordenadas = coords # Lista de 2 [x, y]
         self.direccion = 1 # Derecha = 1 / Izquierda = 0
-        self.daño = 5
+        self.dano = 5
 
         self.animation = "nada" # Que esta haciendo? - Nos indica si se esta animando o no.
         self.index = 0 # Indice del animacion
@@ -117,7 +117,7 @@ class Caracter:
         imagen.dibujar()
 
         if self.index == 5: # Bajar vida en fotograma 5
-            self.vida -= self.daño
+            self.vida -= self.dano
 
     def imprimir_vida(self):
         self.text_vida.update_txt(str(self.vida))  
@@ -138,7 +138,7 @@ class Enemigo(Caracter):
         super().__init__(coords)
         self.direccion = direccion
         self.tarea = "nada"
-        self.daño += 2
+        self.dano += 2
         self.middle = 225
 
     def check_tarea(self):
@@ -427,7 +427,7 @@ def next_wave():
     Hero.vida += (n_wave -1 ) * 40
 
     if n_wave > 7:
-        Hero.daño += (n_wave - 7) * 5
+        Hero.dano += (n_wave - 7) * 5
 
     Bots = []
     for i in range(n_wave):
