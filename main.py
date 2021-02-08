@@ -12,7 +12,7 @@ size = [1525, 800]
 screen = pygame.display.set_mode(size)
 estado = "menu" # menu - game
 
-pygame.display.set_caption('Stick Man')
+pygame.display.set_caption('Defend the Swamp')
 
 pygame.mixer.music.load('imagenes/otros/Mortal Kombat Theme Remix 2012.mp3')
 pygame.mixer.music.set_volume(0.15)
@@ -759,7 +759,7 @@ def evaluate_database(wave):
         return False
 
 def write_database(name, wave):
-    with open('database/database.csv', 'a+', newline='') as f:
+    with open('database/database.csv', 'a+', newline='\n') as f:
         writer = csv.writer(f)
         writer.writerow([name, wave])
         
